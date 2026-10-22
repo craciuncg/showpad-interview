@@ -1,0 +1,191 @@
+/* Paper page. Navy is the action color. .wait is the spinner shown during a long call. */
+:root {
+  color: #1c1915;
+  background: #f3efe6;
+  font-family: Georgia, "Iowan Old Style", serif;
+  line-height: 1.45;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 32px 20px 64px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.eyebrow, h2 span, .muted {
+  color: #6d645b;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.lede {
+  max-width: 40rem;
+}
+
+.health, .status {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+}
+
+.health.bad, .error {
+  color: #8d2b2b;
+}
+
+.actions, .sale-switch, form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+button, input {
+  font: 0.95rem "Segoe UI", sans-serif;
+}
+
+button, .chip {
+  background: #243e73;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button.quiet, .chip {
+  background: transparent;
+  color: #243e73;
+  border: 1px solid #243e73;
+}
+
+.chip.on {
+  background: #243e73;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+input {
+  flex: 1;
+  min-width: 220px;
+  padding: 8px 10px;
+  border: 1px solid #cfc6b8;
+  border-radius: 6px;
+}
+
+.layout {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+section h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+h2 span {
+  display: block;
+  font-weight: 400;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #e2d9cc;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.step, .card, .edge {
+  padding: 8px 0;
+  border-top: 1px solid #eee6da;
+}
+
+.step:first-child, .card:first-child, .edge:first-child {
+  border-top: 0;
+}
+
+.step strong, .card strong {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.quote {
+  margin: 4px 0;
+  padding-left: 10px;
+  border-left: 3px solid #243e73;
+}
+
+.dropped {
+  border-left-color: #8d2b2b;
+}
+
+.kept {
+  border-left-color: #2d6a4f;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-family: Consolas, monospace;
+  font-size: 0.82rem;
+  background: #f7f4ee;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.prose {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+#answer h3 {
+  margin: 14px 0 6px;
+  font-size: 0.95rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.wait {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  min-height: 92px;
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #e2d9cc;
+  border-top-color: #243e73;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.skeleton {
+  height: 12px;
+  width: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #f3efe6 25%, #e7dfd2 37%, #f3efe6 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeleton.short {
+  width: 62%;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}

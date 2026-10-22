@@ -1,0 +1,51 @@
+{
+  "tenant_id": "demo-company",
+  "accounts": [
+    {"crm_id": "account-1", "name": "Acme", "industry": "retail"},
+    {"crm_id": "account-2", "name": "Globex", "industry": "retail"},
+    {"crm_id": "account-history", "name": "Other retail buyers", "industry": "retail"}
+  ],
+  "contacts": [
+    {"crm_id": "contact-1", "account_id": "account-1", "name": "Anna", "title": "manager"},
+    {"crm_id": "contact-2", "account_id": "account-2", "name": "Sam", "title": "security"},
+    {"crm_id": "contact-3", "account_id": "account-2", "name": "Sam", "title": "finance"}
+  ],
+  "opportunities": [
+    {
+      "crm_id": "deal-1",
+      "account_id": "account-1",
+      "name": "Acme purchase",
+      "stage": "Negotiation",
+      "amount": 120000,
+      "outcome": "open",
+      "last_activity_days_ago": 16,
+      "owner": "Alex",
+      "competitor_field": "",
+      "involved": [{"contact_id": "contact-1", "role": "champion"}]
+    },
+    {
+      "crm_id": "deal-2",
+      "account_id": "account-2",
+      "name": "Globex purchase",
+      "stage": "Negotiation",
+      "amount": 80000,
+      "outcome": "open",
+      "last_activity_days_ago": 3,
+      "owner": "Alex",
+      "competitor_field": "",
+      "involved": []
+    }
+  ],
+  "competitors": [
+    {"id": "rival", "name": "Rival", "aliases": []}
+  ],
+  "concept_types": ["timing", "price", "security", "other"],
+  "action_types": ["small_start", "full_switch", "other"],
+  "finished_sales": {
+    "account_id": "account-history",
+    "industry": "retail",
+    "concept_type": "timing",
+    "won_with_small_start": 7,
+    "lost_with_full_switch": 2
+  }
+}

@@ -1,0 +1,8 @@
+# FastAPI is the HTTP layer the screen talks to.
+# Pydantic checks the JSON body of each request. The routes stay thin.
+# Uvicorn only starts that layer. It holds no product logic.
+# Ollama is called with the standard library (urllib), not a client package.
+# The graph, the quote check, and name matching are ordinary Python.
+fastapi
+uvicorn
+pydantic

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deal brief demo</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Proof of concept</p>
+    <h1>One sale, one call, one brief</h1>
+    <p class="lede">The screen talks only to the query API. The model reads the call. It does not write the graph.</p>
+    <p id="health" class="health">Checking the local model…</p>
+  </header>
+
+  <section class="actions">
+    <button id="sync" type="button">1. Sync CRM</button>
+    <button id="acme" type="button">2. Process Acme call</button>
+    <button id="ask" type="button">3. Ask why it is stuck</button>
+    <button id="sam" type="button">Process Globex call</button>
+    <button id="reset" type="button" class="quiet">Reset</button>
+  </section>
+  <p id="status" class="status"></p>
+
+  <div class="layout">
+    <section>
+      <h2>CRM <span>customer file, copied in with no model</span></h2>
+      <div id="crm" class="panel">Sync the CRM to load Acme, Anna, and the Globex sale.</div>
+    </section>
+
+    <section>
+      <h2>Call pipeline <span>store, queue, extract, validate, resolve, write</span></h2>
+      <div id="pipeline" class="panel">Process a call to see each box run.</div>
+    </section>
+
+    <section>
+      <h2>Query API — brief <span>fixed questions, no model</span></h2>
+      <div class="sale-switch">
+        <button type="button" class="chip on" data-sale="opportunity:deal-1">Acme purchase</button>
+        <button type="button" class="chip" data-sale="opportunity:deal-2">Globex purchase</button>
+      </div>
+      <div id="brief" class="panel">The brief appears after the CRM is synced and a call is processed.</div>
+    </section>
+
+    <section>
+      <h2>Query API — question <span>the reply, then the customer file, the call, and the count</span></h2>
+      <form id="ask-form">
+        <input id="question" type="text" value="Why is this stuck?" />
+        <button type="submit">Ask</button>
+      </form>
+      <div id="answer" class="panel">Ask after the Acme call has been processed.</div>
+    </section>
+
+    <section>
+      <h2>Seller confirm / reject <span>saved and reused on the next run</span></h2>
+      <div id="decisions" class="panel">Names from the selected sale appear here.</div>
+    </section>
+
+    <section>
+      <h2>Graph <span>records and links, without the past-sale count</span></h2>
+      <div id="graph" class="panel">Empty until the CRM is synced.</div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Extract mentions from the transcript. Return JSON only, with this shape:
+{"mentions":[{"type":"person|competitor|concept","surface":"short name","quote":"exact words copied from the transcript","role_hint":"","concept_type":"","kind":"","suggested_contact_id":""}]}
+
+Rules:
+- type person: a human name. role_hint is a job word copied from that same quote, or empty.
+- type competitor: another company's product or vendor.
+- type concept: a reason the purchase is stuck. kind is "objection". concept_type is one of: timing, price, security, other. Use timing when the quote is about this quarter, delay, or stopping the project. Use price for cost. Use security only when the quote itself is about a security review.
+- quote must be copied from the transcript, character for character. Do not write a sentence that is not in the transcript.
+- suggested_contact_id may be filled only when the spoken name is the same person as a known contact. Otherwise leave it empty.
+- Do not add a discount, a promise, or any fact that the transcript does not say.

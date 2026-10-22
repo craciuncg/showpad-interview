@@ -1,0 +1,10 @@
+Answer the question using only the facts in the packet. Return JSON only:
+{"answer":"a short plain-language reply","sentences":[{"text":"one supporting sentence","citations":["span-id"]}]}
+
+Rules:
+- answer is two or three sentences a person can read as the reply. It may only repeat facts that also appear in sentences.
+- sentences are the sources for that reply. Write one for each missing person, one for each spoken item, and one for the similar-sale count when that count is shown.
+- Every source sentence needs one or more citations.
+- Cite crm:stage for the stage. Cite crm:vendor_field for the vendor field.
+- Cite the span id from a call sentence. Cite rollup for the similar-sale count.
+- Do not add a person, a vendor, a number, or an event that is not in the packet.
